@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sesmail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -76,8 +77,15 @@ WSGI_APPLICATION = 'Groupmail.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'groupmail',
+            'USER': 'root',
+            'PASSWORD': 'c67x88h72',
+            'HOST': 'localhost',
+            'PORT': '',
     }
 }
 
@@ -85,9 +93,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-CN'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
